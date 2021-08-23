@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <script>
+	function increment()
+	{
+  		var num;
+		if(document.getElementById("one").checked)
+			num = document.getElementById("one").value;
+		if(document.getElementById("two").checked)
+			num = document.getElementById("two").value;
+		if(document.getElementById("three").checked)
+			num = document.getElementById("three").value;
+		num = parseInt(num);
+		var val = parseInt(document.getElementById("counter").value);
+  		document.getElementById("counter").value = num + val;
+	}
+	function decrement()
+	{
+
+		var num;
+		if(document.getElementById("one").checked)
+			num = document.getElementById("one").value;
+		if(document.getElementById("two").checked)
+			num = document.getElementById("two").value;
+		if(document.getElementById("three").checked)
+			num = document.getElementById("three").value;
+  		num = parseInt(num);
+		var val = parseInt(document.getElementById("counter").value);
+  		document.getElementById("counter").value = val - num;
+	}
+	function toggle()
+	{
+		if(!document.getElementById("counter").disabled)
+		{
+			document.getElementById("counter").disabled = true;
+			document.getElementById("toggle").innerHTML = "Enable Input";
+		}
+		else
+		{
+			document.getElementById("counter").disabled = false;
+			document.getElementById("toggle").innerHTML = "Disable Input";
+		}
+	}
+</script>
+<title>Counter</title>
+ </head>
+<body>
+
+<h1>Counter</h1>
+<center>
+<input type="radio" id="one" name="num" value="1"/>One
+<input type="radio" id="two" name="num" value="2"/>Two
+  <input type="radio" id="three" name="num" value="3"/>Three
+  <br/><br/><br/>
+<button onclick="increment()"><b>+</b></button>
+<input type="text" id = "counter" pattern="[0-9]" value="0" style="width: 30px;"/>
+
+<button onclick="decrement()"><b>-</b></button>
+
+<button onclick="toggle()" id="toggle">Disable Input</button>
+</center>
+</body>
+</html>
